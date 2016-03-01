@@ -5,6 +5,7 @@
 	<link href="../bower_components/polymer/polymer.html" rel="import">
 	<link href="../bower_components/paper-checkbox/paper-checkbox.html" rel="import">
 	<link href="../bower_components/paper-item/paper-item.html" rel="import">
+	<link href="../bower_components/paper-button/paper-button.html" rel="import">
 	<link href="../bower_components/paper-input/paper-input.html" rel="import">
 	<link href="../bower_components/paper-material/paper-material.html" rel="import">
 	<link href="../bower_components/iron-icons/iron-icons.html" rel="import">
@@ -25,18 +26,20 @@
 	}
     
     paper-button {
-	    background: #ccc;
+	    
     }
     
-    paper-fab {
+    paper-button {
 	    position: absolute;
 	    bottom: 3vh;
 		right: 3vw;
-		background: #2196f3;
+		font-family: Arial, Helvetica, sans-serif;
+		
     }
     
     .done {
 	    background: green;
+	    color: white;
     }
     
     .info {
@@ -69,8 +72,8 @@
     <!-- DOM local de tu elemento -->
     <paper-material class="todo" elevation="1">
 	    <paper-checkbox checked="{{completed}}"></paper-checkbox>
-	    <paper-fab hidden={{editing}}  icon="icons:create" on-tap="doEdit" class="edit" mini></paper-fab>
-	    <paper-fab hidden={{!editing}} icon="icons:done"   on-tap="doEdit" class="done" mini></paper-fab>
+	    <paper-button hidden={{editing}} on-tap="doEdit" class="edit" raised><iron-icon icon="create"></iron-icon>Editar</paper-button>
+	    <paper-button hidden={{!editing}} on-tap="doEdit" class="done" raised><iron-icon icon="done"></iron-icon>Guardar</paper-button>
 	    <paper-item hidden="{{editing}}" id="task">{{task}}</paper-item>
 	    <paper-input id="edit" hidden="{{!editing}}" value="{{task}}"></paper-input>
 	    <paper-item class="info">Creado por: <span>{{ user }}</span></paper-item>

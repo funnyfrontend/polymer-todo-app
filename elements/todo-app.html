@@ -96,20 +96,13 @@
 	}
 	
 	#made-with img {
-		width: 35%;
+		width: 60%;
 		padding: 10px;
 	}
 
 	#logo {
 		margin-left: auto;
 	}
-
-	@media(max-width: 420px) {
-		.active-tasks {
-			display: none;
-		}
-	}
-	
 
 	</style>
   
@@ -131,7 +124,7 @@
 					</template>
 				</paper-menu>
 				<paper-material id="made-with" elevation="2">
-					<a href="http://www.pubnub.com/"><img src="../img/made-with.png"/></a>
+					<a href="http://www.funnyfrontend.com/"><img src="../img/made-with.png"/></a>
 				</paper-material>
 			</paper-header-panel>
 			<!-- //Panel izquierdo / Side Panel -->
@@ -146,10 +139,6 @@
 						<span id="here">0</span>
 					</paper-item>
 					<paper-item class="active-tasks">Tareas activas</paper-item>
-					<paper-item elevation="2" id="logo">
-						<a href="http://www.funnyfrontend.com/"><img src="../img/todo-logo.svg"/></a>
-				    </paper-material>
-
 				</paper-toolbar>
 				<!-- //Barra Superior -->
 				<div class="todo-element-content">
@@ -157,7 +146,6 @@
 					<paper-material id="todoEntry" elevation="2">
 						<paper-input id="tTask" label="Tarea"></paper-input>
 						<paper-input id="tUser" char-counter label="Usuario" maxlength="16" error="maximum characters exceeded" style="width:75%;display: inline-block" ></paper-input> 
-						<paper-fab icon="icons:add" on-tap="postTask"></paper-fab>
 					</paper-material>
 					<div id="todos">
 						<template is="dom-if" if="{{!todo.length}}">
@@ -171,6 +159,8 @@
 						</template>
 					</div>
 				</div>
+						<paper-fab icon="icons:add" on-tap="postTask"></paper-fab>
+
 			</paper-header-panel>
 			<!-- //Panel derecho / Main Panel -->
 		</paper-drawer-panel> 
